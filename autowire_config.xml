@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- beans와 context추가  -->
+	<!-- autowiring을 이용하지 않은 방법
+	<bean id="a" class="com.choedroid.autowire.TestA">
+		<property name="b" ref="b"/>
+		<property name="c">
+			<ref bean="c"/>
+		</property>
+	</bean>
+	 -->
+	 
+	 <!-- autowiring을 이용한 첫번째방법 
+	<bean id="a" class="com.choedroid.autowire.TestA" autowire="byType"/> 
+	<bean id="b" class="com.choedroid.autowire.TestB"/>
+	<bean id="c" class="com.choedroid.autowire.TestC"/>
+	 -->
+	 <!-- annotation을 이용한 autowiring -->
+	<bean id="a" class="com.choedroid.autowire.TestA"/> 
+	<bean id="b" class="com.choedroid.autowire.TestB"/>
+	<bean id="c" class="com.choedroid.autowire.TestC"/>
+	
+	<!-- annotaion을 사용하기 위해서는 다음과 같은 설정 필요 -->
+	<context:annotation-config/>
+</beans>

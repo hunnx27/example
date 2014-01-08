@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="msg" class="com.choedroid.lifecycle.MessageBeanImpl" init-method="init"><!-- 초기화메서드실행 -->
+		<constructor-arg>
+			<value>홍길동</value>
+		</constructor-arg>
+		
+		<constructor-arg type="int" value="35"/>
+		
+		<property name="greeting">
+			<value>안녕하세요. 또 만났군요.</value>
+		</property>
+	</bean>
+	
+	<bean class="com.choedroid.lifecycle.CustomBeanPostProcessor"/>
+</beans>

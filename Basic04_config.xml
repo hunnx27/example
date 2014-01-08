@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- msgkr,mkr,.... -->
+	<!-- msgkr;mkr,.... -->
+	<bean id="msgBeanKr" name="msgkr mkr" class="com.choedroid.basic04.MessageBeanKr"/> <!-- 클래스가실행될때 인스턴스를 생성하겠다. -->
+	<bean id="msgBeanEn" class="com.choedroid.basic04.MessageBeanEn"/> <!-- 클래스가실행될때 인스턴스를 생성하겠다. -->
+</beans>

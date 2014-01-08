@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="msg" class="com.choedroid.basic06.MessageBeanImpl">
+		<constructor-arg>
+			<value>홍길동</value>
+		</constructor-arg><!-- MessageBeanImpl msg = new MessageBeanImpl("홍길동"); -->
+		
+		<constructor-arg index="1" value="35"/><!-- MessageBeanImpl msg = new MessageBeanImpl("","30"); -->
+		
+		<property name="greeting"><!-- 세터메서드호출 <setProperty랑 같음 -->
+			<value>안녕하세요. 또 만났군요.</value>
+		</property>
+		
+		<property name="outputter">
+			<ref bean="out"/><!-- value쓰면안되고 주소값을 넘겨받을때는 ref -->
+		</property>
+	</bean>
+	
+	
+	<bean id="out" class="com.choedroid.basic06.FileOutputter">
+		<property name="filePath" value="c:\test\out.txt"/>
+	</bean>
+		<!-- FileOutputter out = FileOutputter() -->
+</beans>
